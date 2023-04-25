@@ -4,11 +4,12 @@ const bodyParser = require('body-parser')
 const multer = require('multer')
 const tesseract = require('tesseract.js')
 const {OpenAIEmbeddings} = require('langchain/embeddings')
+const openaiApiKey = "openaiapikey"
 
 const app = express()
 
 //integration de l'api de openAI dans OpenAIEmbeddings
-const embeddings = new OpenAIEmbeddings({openAIApiKey: "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"})
+const embeddings = new OpenAIEmbeddings({openAIApiKey: openaiApiKey})
 //middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
